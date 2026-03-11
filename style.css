@@ -1,254 +1,83 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>KI-Strategieberatung – Strukturierte KI-Integration für den Mittelstand</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Strategische KI-Beratung für mittelständische Unternehmen: KI-Potenzialanalyse, Roadmap-Entwicklung und Management-Workshops für eine wirtschaftliche, nachhaltige Integration von KI.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="site-header">
-        <div class="container site-header__inner">
-            <div class="site-header__brand">
-                <span class="brand-mark"></span>
-                <span class="brand-name">KI&nbsp;Strategieberatung</span>
-            </div>
-            <nav class="site-header__nav" aria-label="Hauptnavigation">
-                <a href="#leistungen" class="nav-link">Leistungen</a>
-                <a href="#vorgehen" class="nav-link">Vorgehen</a>
-                <a href="#positionierung" class="nav-link">Positionierung</a>
-                <a href="#zielgruppe" class="nav-link">Zielgruppe</a>
-                <a href="#kontakt" class="nav-link nav-link--highlight">Kontakt</a>
-            </nav>
-        </div>
-    </header>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <main>
-        <!-- HERO -->
-        <section class="hero" aria-labelledby="hero-heading">
-            <div class="container hero__inner">
-                <div class="hero__content">
-                    <h1 id="hero-heading" class="hero__headline">
-                        KI ist keine Technologieentscheidung.<br>
-                        Sondern eine strategische.
-                    </h1>
-                    <p class="hero__subline">
-                        Ich unterstütze Unternehmen dabei, künstliche Intelligenz strukturiert, wirtschaftlich und nachhaltig in ihre Organisation zu integrieren – mit klarer Priorisierung und belastbarer Entscheidungsgrundlage.
-                    </p>
-                    <div class="hero__actions">
-                        <a href="#kontakt" class="btn btn--primary">
-                            Strategiegespräch vereinbaren
-                        </a>
-                    </div>
-                </div>
-                <div class="hero__meta">
-                    <p class="hero__meta-label">Fokus</p>
-                    <p class="hero__meta-text">
-                        Mittelständische Unternehmen, die KI nicht als Tool, sondern als strategischen Hebel verstehen möchten.
-                    </p>
-                </div>
-            </div>
-        </section>
+body {
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.7;
+}
 
-        <!-- STRATEGISCHE EINORDNUNG -->
-        <section class="section section--light" id="einordnung" aria-labelledby="einordnung-heading">
-            <div class="container section__inner section__inner--narrow">
-                <h2 id="einordnung-heading" class="section__headline">
-                    Warum KI strategisch gedacht werden muss
-                </h2>
-                <div class="section__body">
-                    <p>
-                        Viele Unternehmen starten mit Tools. Erfolgreiche Unternehmen starten mit einer klaren strategischen Einordnung.
-                    </p>
-                    <p>
-                        Künstliche Intelligenz beeinflusst Prozesse, Entscheidungslogiken, Rollenprofile und Wettbewerbsdynamiken. Wer KI isoliert betrachtet, riskiert Insellösungen ohne nachhaltigen Effekt.
-                    </p>
-                    <p>
-                        Eine fundierte KI-Strategie schafft Transparenz, Priorisierung und wirtschaftliche Klarheit.
-                    </p>
-                </div>
-            </div>
-        </section>
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
 
-        <!-- LEISTUNGEN -->
-        <section class="section" id="leistungen" aria-labelledby="leistungen-heading">
-            <div class="container section__inner">
-                <div class="section__header">
-                    <h2 id="leistungen-heading" class="section__headline">
-                        Leistungen
-                    </h2>
-                    <p class="section__kicker">
-                        Von Potenzialanalyse bis Management-Entscheidung.
-                    </p>
-                </div>
+.hero {
+  padding: 120px 0;
+  text-align: center;
+}
 
-                <div class="grid grid--three">
-                    <article class="card">
-                        <h3 class="card__title">KI-Potenzialanalyse</h3>
-                        <p class="card__text">
-                            Systematische Analyse der bestehenden Wertschöpfungskette mit Identifikation relevanter und wirtschaftlich tragfähiger KI-Anwendungsfelder. Im Fokus stehen konkrete Prozesse, Entscheidungspunkte und Datenquellen entlang der gesamten Organisation.
-                        </p>
-                        <p class="card__text">
-                            Jedes potenzielle Einsatzfeld wird nach Impact, Umsetzbarkeit und strategischer Relevanz bewertet. So entsteht ein klarer Überblick darüber, wo KI heute und perspektivisch echten Mehrwert stiftet – und wo nicht.
-                        </p>
-                    </article>
+.hero h1 {
+  font-size: 46px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
 
-                    <article class="card">
-                        <h3 class="card__title">Strategische Roadmap</h3>
-                        <p class="card__text">
-                            Entwicklung einer priorisierten Umsetzungsstrategie, die wirtschaftliche Effekte, Ressourcen und technologische Reife berücksichtigt. Die Roadmap legt fest, welche Initiativen in welcher Reihenfolge umgesetzt werden sollten.
-                        </p>
-                        <p class="card__text">
-                            Neben der Wirtschaftlichkeitsbewertung umfasst die Roadmap eine klare Ressourcenplanung, Abhängigkeiten sowie eine fundierte Risikoeinschätzung. Ziel ist eine realistische, steuerbare und skalierbare KI-Agenda.
-                        </p>
-                    </article>
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 18px;
+}
 
-                    <article class="card">
-                        <h3 class="card__title">Management-Workshop</h3>
-                        <p class="card__text">
-                            Aufbereitung komplexer technologischer Fragestellungen für Geschäftsführung und Führungskräfte. Im Mittelpunkt stehen strategische Entscheidungen, nicht operative Details oder Tool-Diskussionen.
-                        </p>
-                        <p class="card__text">
-                            Der Workshop schafft ein gemeinsames Verständnis von Chancen, Grenzen und Implikationen von KI. Ergebnis sind strukturierte Entscheidungsgrundlagen statt operativer Überforderung – und ein klarer Rahmen für nächste Schritte.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
+.btn-primary {
+  background: #111;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s ease;
+}
 
-        <!-- VORGEHENSMODELL -->
-        <section class="section section--muted" id="vorgehen" aria-labelledby="vorgehen-heading">
-            <div class="container section__inner">
-                <div class="section__header">
-                    <h2 id="vorgehen-heading" class="section__headline">
-                        Vorgehensmodell
-                    </h2>
-                    <p class="section__kicker">
-                        Strukturierter Rahmen für fundierte Entscheidungen.
-                    </p>
-                </div>
+.btn-primary:hover {
+  background: #333;
+}
 
-                <div class="steps">
-                    <article class="step">
-                        <div class="step__badge">01</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Analyse</h3>
-                            <p class="step__text">
-                                Erhebung der aktuellen Prozesse, Datenlandschaft und strategischen Zielsetzung. Verstehen, wo heute Wertschöpfung entsteht, welche Daten vorhanden sind und welche Ambition das Unternehmen mit KI verbindet.
-                            </p>
-                        </div>
-                    </article>
+.section {
+  padding: 100px 0;
+}
 
-                    <article class="step">
-                        <div class="step__badge">02</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Bewertung</h3>
-                            <p class="step__text">
-                                Priorisierung potenzieller KI-Anwendungsfälle anhand klar definierter Kriterien wie strategischer Fit, wirtschaftlicher Hebel, Umsetzbarkeit und Risiko. Ergebnis ist ein transparentes Ranking der sinnvollsten Initiativen.
-                            </p>
-                        </div>
-                    </article>
+.section.light {
+  background: #f6f6f6;
+}
 
-                    <article class="step">
-                        <div class="step__badge">03</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Architektur</h3>
-                            <p class="step__text">
-                                Definition einer strategischen Zielstruktur für Daten, Systeme und Rollen inklusive Governance-Überlegungen. Dabei wird festgelegt, wie KI in bestehende Architektur und Organisation eingebettet werden kann.
-                            </p>
-                        </div>
-                    </article>
+h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
 
-                    <article class="step">
-                        <div class="step__badge">04</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Entscheidungsrahmen</h3>
-                            <p class="step__text">
-                                Konkrete Handlungsempfehlungen, Umsetzungslogik und Entscheidungsoptionen für das Management. So entsteht ein belastbarer Rahmen, wann und wie in KI investiert werden sollte – und welche Initiativen bewusst nicht verfolgt werden.
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
 
-        <!-- POSITIONIERUNG -->
-        <section class="section" id="positionierung" aria-labelledby="positionierung-heading">
-            <div class="container section__inner section__inner--narrow">
-                <h2 id="positionierung-heading" class="section__headline">
-                    Technologie ist Mittel zum Zweck. Strategie entscheidet über Wirkung.
-                </h2>
-                <div class="section__body">
-                    <p>
-                        KI ist kein Selbstzweck und kein kurzfristiger Effizienzhebel. Sie ist ein struktureller Wettbewerbsfaktor.
-                    </p>
-                    <p>
-                        Ich verbinde technologisches Verständnis mit betriebswirtschaftlicher Analyse und strategischer Denkweise. Im Zentrum stehen Geschäftsmodell, Wertschöpfung und Organisation – nicht einzelne Tools oder kurzfristige Hypes.
-                    </p>
-                    <p>
-                        Ziel ist nicht die isolierte Einführung einzelner Lösungen, sondern die nachhaltige Integration von KI in bestehende Geschäftsmodelle und Entscheidungsprozesse. So entsteht Wirkung, die über den nächsten Technologiezyklus hinaus trägt.
-                    </p>
-                </div>
-            </div>
-        </section>
+.card {
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
 
-        <!-- ZIELGRUPPE -->
-        <section class="section section--muted" id="zielgruppe" aria-labelledby="zielgruppe-heading">
-            <div class="container section__inner">
-                <div class="section__header">
-                    <h2 id="zielgruppe-heading" class="section__headline">
-                        Zielgruppe
-                    </h2>
-                    <p class="section__kicker">
-                        Für Organisationen, die KI bewusst gestalten wollen.
-                    </p>
-                </div>
-
-                <div class="pill-list">
-                    <div class="pill-list__group">
-                        <span class="pill">Mittelständische Unternehmen</span>
-                        <span class="pill">Wachstumsorientierte Organisationen</span>
-                        <span class="pill">Geschäftsführungen</span>
-                        <span class="pill">Strategische Entscheider</span>
-                    </div>
-                    <p class="pill-list__text">
-                        Typische Ausgangssituation: erste Erfahrungen mit KI-Tools sind vorhanden, die Frage nach Skalierung, Governance und wirtschaftlicher Priorisierung ist jedoch offen. Genau hier setzt die strategische KI-Beratung an.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- KONTAKT -->
-        <section class="section section--light" id="kontakt" aria-labelledby="kontakt-heading">
-            <div class="container section__inner section__inner--narrow section__inner--center">
-                <h2 id="kontakt-heading" class="section__headline">
-                    KI ist Gegenwart.
-                </h2>
-                <p class="section__body section__body--center">
-                    Lassen Sie uns analysieren, wo in Ihrem Unternehmen der größte strategische Hebel liegt.
-                </p>
-                <div class="section__actions">
-                    <a href="mailto:kontakt@ki-strategieberatung.de" class="btn btn--primary">
-                        Unverbindliches Erstgespräch
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container site-footer__inner">
-            <p class="site-footer__text">
-                © <span id="year">2026</span> KI Strategieberatung. Alle Rechte vorbehalten.
-            </p>
-            <p class="site-footer__text site-footer__text--muted">
-                Auf Anfrage: Referenzen, Projektbeispiele und weitere Unterlagen.
-            </p>
-        </div>
-    </footer>
-</body>
-</html>
+footer {
+  padding: 40px 0;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  text-align: center;
+}
