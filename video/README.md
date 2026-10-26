@@ -1,6 +1,6 @@
 # Kischkel Personal – Erklärvideo
 
-**Fertiges Video:** `Kischkel_Personal_Erklaervideo.mp4` (1920×1080, 30 fps, ca. 2:18 min, Stimme: Killian, mit Sprecher, Untertiteln und Musik)
+**Fertiges Video:** `Kischkel_Personal_Erklaervideo.mp4` (1920×1080, 30 fps, ca. 1:58 min, Stimme: Killian, Tempo +22 %, mit Sprecher, Untertiteln und Musik)
 
 ## Aufbau
 1. Stellenanzeige ohne Rücklauf
@@ -19,7 +19,7 @@
 ```bash
 pip install edge-tts                         # Sprecherstimme
 # Sprechertext in script.json ändern, dann pro Szene:
-python3 tts.py de-DE-KillianNeural "<Text>" vo/s1.mp3 +6%
+python3 tts.py de-DE-KillianNeural "<Text>" vo/s1.mp3 +22%
 python3 build_timeline.py                    # Timing aus den Wort-Zeitmarken
 python3 mix.py                               # Musik + Stimme -> mix.wav
 node render.js 0 <frames> out.mp4            # Bilder rendern (Playwright + ffmpeg)

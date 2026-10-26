@@ -175,13 +175,13 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-l
 .arrow:after{content:"";position:absolute;right:-4px;top:-9px;border-left:18px solid var(--g400);border-top:12px solid transparent;border-bottom:12px solid transparent}
 
 /* ---------- S8 ---------- */
-.offer{top:370px;width:790px;height:530px;padding:44px 50px}
+.offer{top:340px;width:790px;height:570px;padding:44px 50px}
 .offer .tag{display:flex;align-items:center;gap:16px;font:700 20px var(--sans);letter-spacing:.16em;color:var(--o700);text-transform:uppercase}
-.offer h3{font:700 54px/1.1 var(--serif);margin-top:24px}
+.offer h3{font:700 48px/1.1 var(--serif);margin-top:26px;white-space:nowrap}
 .offer .os{font:400 26px var(--sans);color:var(--g600);margin-top:10px}
-.offer .rule{width:90px;height:3px;background:var(--o300);margin:26px 0 22px}
-.offer .blist{margin-top:0;gap:13px}
-.offer .bl{font-size:28px;color:var(--e700)}
+.offer .rule{width:90px;height:3px;background:var(--o300);margin:28px 0 30px}
+.offer .blist{margin-top:0;gap:24px}
+.offer .bl{font-size:29px;color:var(--e700)}
 .activeRing{position:absolute;inset:-3px;border-radius:30px;border:3px solid var(--o500);pointer-events:none}
 
 /* ---------- S9 ---------- */
@@ -510,24 +510,11 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-l
       <div class="h1" data-in="@Nehmen-0.2" data-a="up">Nehmen Sie Ihr Recruiting</div>
       <div class="h1 it" data-in="@eigenen-0.3" data-a="up">in die eigenen Hände.</div>
     </div>
-    <div class="s11-b" data-out="end-5.1" data-oa="blurout" data-od="0.6">
-      <div class="maxc" data-in="@Sprechen-0.1" data-a="scale"><img src="img/max.png"></div>
-      <div class="s11-name">
-        <div class="pill-eyebrow" data-in="@Sprechen" data-a="up">Kostenfreies Erstgespräch</div>
-        <div class="h1" style="margin-top:26px" data-in="@Sprechen+0.1" data-a="up">Sprechen Sie mit</div>
-        <div class="h1 it" data-in="@Kischkel-0.2" data-a="up">Kischkel Personal.</div>
-      </div>
-      <div class="contact" data-in="@kostenfreien-0.1" data-a="up">
-        <div class="ci"><div class="lbl"><i data-icon="phone"></i>Telefon</div><div>+49 175 114 10 87</div></div>
-        <div class="ci"><div class="lbl"><i data-icon="mail"></i>E-Mail</div><div>info@kischkel-personal.de</div></div>
-        <div class="ci"><div class="lbl"><i data-icon="pin"></i>Adresse</div><div>Marc Chagall Straße 122<br>40477 Düsseldorf</div></div>
-      </div>
-    </div>
     <div class="endcard">
-      <img src="img/logo_white.png" data-in="end-4.6" data-a="blur" data-d="1.0">
-      <div class="url" data-in="end-4.0" data-a="up">kischkel-personal<b>.de</b></div>
-      <div class="cta" data-in="end-3.6" data-a="pop">Kostenfreies Erstgespräch mit Kischkel Personal <i data-icon="arrow"></i></div>
-      <small data-in="end-3.2" data-a="fade">Unternehmensberatung · Düsseldorf</small>
+      <img src="img/logo_white.png" data-in="@Sprechen-0.1" data-a="blur" data-d="1.0">
+      <div class="url" data-in="@Kischkel" data-a="up">kischkel-personal<b>.de</b></div>
+      <div class="cta" data-in="@kostenfreien-0.2" data-a="pop">Kostenfreies Erstgespräch mit Kischkel Personal <i data-icon="arrow"></i></div>
+      <small data-in="@Erstgespräch+0.3" data-a="fade">Unternehmensberatung · Düsseldorf</small>
     </div>
   </div>
 </section>

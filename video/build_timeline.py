@@ -1,6 +1,6 @@
 import json, subprocess
 LEAD, TAIL, OVER = 0.45, 0.75, 0.4
-EXTRA = {"s11": 8.0, "s1": 0.2}
+EXTRA = {"s11": 4.0, "s1": 0.2}
 themes = {"s1":"light","s2":"dark","s3":"light","s4":"dark","s5":"light","s6":"light","s7":"light","s8":"light","s9":"light","s10":"light","s11":"dark"}
 script = json.load(open("script.json"))
 t = 0.0; scenes = []
