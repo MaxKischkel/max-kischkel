@@ -1,0 +1,88 @@
+/* ===== Einsatzgebiet: interaktive Deutschlandkarte ===== */
+.bg-einsatz {
+  background:
+    radial-gradient(55% 65% at 76% 52%, rgba(255, 111, 58, .16), transparent 70%),
+    radial-gradient(40% 50% at 8% 0%, rgba(255, 111, 58, .07), transparent 70%),
+    #211A1A;
+}
+.eg-grid { display: grid; gap: 40px; grid-template-areas: 'intro' 'map' 'lists'; }
+.eg-intro { grid-area: intro; }
+.eg-lists { grid-area: lists; }
+.eg-card { grid-area: map; }
+@media (min-width: 1024px) {
+  .eg-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: 'intro map' 'lists map'; column-gap: 64px; row-gap: 36px; align-content: center; }
+  .eg-intro { align-self: end; }
+  .eg-lists { align-self: start; }
+  .eg-card { align-self: center; }
+}
+
+.eg-lead { margin-top: 24px; max-width: 52ch; font-size: 17px; }
+@media (min-width: 768px) { .eg-lead { font-size: 18px; } }
+
+.eg-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 32px; max-width: 480px; }
+.eg-fact { padding: 18px 20px; border-radius: 16px; background: rgba(58, 52, 51, .55); border: 1px solid rgba(212, 209, 203, .16); }
+.eg-fact-v { margin: 0; font-family: 'PT Serif', Georgia, serif; font-size: clamp(32px, 3.4vw, 44px); line-height: 1; color: #fff; }
+.eg-fact-l { margin: 8px 0 0; font-size: 15px; line-height: 1.35; color: #D4D1CB; }
+
+.eg-list-title { margin: 36px 0 0; font-family: 'PT Sans', system-ui, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #FF6F3A; }
+.eg-lists > .eg-list-title:first-child { margin-top: 0; }
+.eg-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.eg-chip { padding: 5px 12px; border-radius: 9999px; border: 1px solid rgba(212, 209, 203, .26); font-size: 15px; line-height: 1.4; color: #D4D1CB; transition: background-color .2s, color .2s, border-color .2s; }
+.eg-chip[data-active='true'] { background: #FF6F3A; border-color: #FF6F3A; color: #211A1A; }
+
+.eg-orte { display: grid; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; max-width: 480px; }
+.eg-ort-item { display: flex; justify-content: space-between; gap: 16px; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(212, 209, 203, .16); background: rgba(58, 52, 51, .4); transition: border-color .2s, background-color .2s; }
+.eg-ort-item[data-active='true'] { border-color: #FF6F3A; background: rgba(255, 111, 58, .12); }
+.eg-ort-name { font-weight: 700; color: #fff; }
+
+.eg-card { position: relative; padding: 14px; border-radius: 24px; background: rgba(58, 52, 51, .32); border: 1px solid rgba(212, 209, 203, .14); box-shadow: 0 24px 60px rgba(0, 0, 0, .25); }
+@media (min-width: 768px) { .eg-card { padding: 28px; } }
+.eg-map { position: relative; width: 100%; max-width: 520px; margin: 0 auto; aspect-ratio: 600 / 798; }
+.eg-map svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; -webkit-tap-highlight-color: transparent; }
+
+.eg-land { fill: #3A3433; stroke: rgba(250, 248, 244, .42); stroke-width: 1; stroke-linejoin: round; vector-effect: non-scaling-stroke; cursor: pointer; transition: fill .2s ease; }
+.eg-land[data-active='true'] { fill: #FF6F3A; }
+@media (hover: hover) { .eg-land:hover { fill: #56504E; } .eg-land[data-active='true']:hover { fill: #FF6F3A; } }
+.eg-land-outline { fill: none; stroke: #FAF8F4; stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; pointer-events: none; }
+
+.eg-hq-dot { fill: #FAF8F4; stroke: #211A1A; stroke-width: 3; vector-effect: non-scaling-stroke; }
+.eg-ort { cursor: pointer; }
+.eg-ort-dot { fill: #FF6F3A; stroke: #211A1A; stroke-width: 2; vector-effect: non-scaling-stroke; transition: r .2s; }
+.eg-ort[data-active='true'] .eg-ort-dot { fill: #FAF8F4; }
+.eg-pulse { fill: none; stroke: #FF6F3A; stroke-width: 2; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; animation: eg-pulse 2.6s ease-out infinite; pointer-events: none; }
+.eg-ort .eg-pulse { animation-delay: .9s; }
+@keyframes eg-pulse { from { transform: scale(1); opacity: .9; } to { transform: scale(3.2); opacity: 0; } }
+
+.eg-tip {
+  --tx: -50%; --ty: calc(-100% - 16px);
+  position: absolute; z-index: 2; transform: translate(var(--tx), var(--ty));
+  padding: 8px 14px 9px; border-radius: 12px; background: #FAF8F4; color: #211A1A;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .35); pointer-events: none; white-space: nowrap;
+  animation: eg-tip-in .18s ease-out both;
+}
+.eg-tip::after { content: ''; position: absolute; left: 50%; bottom: -5px; width: 12px; height: 12px; margin-left: -6px; background: inherit; border-radius: 2px; transform: rotate(45deg); }
+.eg-tip[data-h='start'] { --tx: -24px; }
+.eg-tip[data-h='start']::after { left: 24px; }
+.eg-tip[data-h='end'] { --tx: calc(-100% + 24px); }
+.eg-tip[data-h='end']::after { left: auto; right: 18px; margin-left: 0; }
+.eg-tip[data-v='below'] { --ty: 16px; }
+.eg-tip[data-v='below']::after { bottom: auto; top: -5px; }
+.eg-tip-k { display: block; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #A84B2A; }
+.eg-tip-t { display: block; margin-top: 2px; font-family: 'PT Serif', Georgia, serif; font-size: 16px; font-weight: 700; line-height: 1.2; }
+@media (min-width: 768px) { .eg-tip-t { font-size: 18px; } }
+@media (max-width: 639px) { .eg-tip--extra { display: none; } }
+@keyframes eg-tip-in { from { opacity: 0; } to { opacity: 1; } }
+
+.eg-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(212, 209, 203, .14); font-size: 14px; color: #D4D1CB; }
+.eg-legend-item { display: inline-flex; align-items: center; gap: 8px; }
+.eg-legend-hq { width: 12px; height: 12px; border-radius: 9999px; background: #FAF8F4; box-shadow: 0 0 0 2px #211A1A, 0 0 0 4px #FF6F3A; margin: 0 2px; }
+.eg-legend-ort { width: 10px; height: 10px; border-radius: 9999px; background: #FF6F3A; box-shadow: 0 0 0 2px #211A1A; }
+.eg-hint { margin-left: auto; color: #A9A49B; }
+.eg-hint-mouse { display: none; }
+@media (hover: hover) and (pointer: fine) { .eg-hint-mouse { display: inline; } .eg-hint-touch { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .eg-pulse { animation: none; opacity: 0; }
+  .eg-tip { animation: none; }
+  .eg-land, .eg-chip, .eg-ort-item { transition: none; }
+}
