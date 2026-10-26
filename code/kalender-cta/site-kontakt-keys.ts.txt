@@ -1,0 +1,4 @@
+  // Kostenlose Variante: Calendly-Kalender direkt auf der Seite (Link in tracking.calendlyUrl)
+  terminEinbettungText: 'Wählen Sie Ihren Wunschtermin direkt im Kalender. Der Kalender wird von Calendly bereitgestellt, beim Anzeigen werden Daten an Calendly in den USA übertragen. Mehr dazu in der',
+  terminEinbettungButton: 'Kalender anzeigen',
+  terminEinbettungTitel: 'Terminkalender von Calendly',

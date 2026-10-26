@@ -1,0 +1,7 @@
+// Aufrufe unter einzelnen Abschnitten der Startseite (führen zum Kontaktbereich mit dem Kalender)
+export const sektionCtas = {
+  herausforderungen: { button: 'Kostenlose Erstanalyse buchen', hinweis: 'Unverbindlich und persönlich.' },
+  team: { text: 'Lernen Sie uns im Erstgespräch kennen.', button: 'Erstgespräch vereinbaren' },
+  ablauf: { text: 'Schritt 1 ist kostenlos und unverbindlich.', button: 'Mit der Erstanalyse starten' },
+} as const;
+
