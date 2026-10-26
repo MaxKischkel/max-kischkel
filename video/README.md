@@ -1,6 +1,6 @@
 # Kischkel Personal – Erklärvideo
 
-**Fertiges Video:** `Kischkel_Personal_Erklaervideo.mp4` (1920×1080, 30 fps, ca. 2:01 min, Stimme: Brian (Multilingual), Tempo +22 %, mit Sprecher, Untertiteln und Musik)
+**Fertiges Video:** `Kischkel_Personal_Erklaervideo.mp4` (1920×1080, 30 fps, ca. 2:04 min, Stimme: Brian (Multilingual), Tempo +22 %, mit Sprecher, Untertiteln und Musik)
 
 ## Aufbau
 1. Stellenanzeige ohne Rücklauf
@@ -29,5 +29,6 @@ Wird der Text geändert, passt sich das Timing automatisch an.
 
 ## Aussprache
 Englische Begriffe stehen in `script.json` in deutscher Lautschrift, damit Brian sie deutsch ausspricht:
-„Sooschel Äds“ (Social Ads), „Rikruuting“ (Recruiting), „Onbording“ (Onboarding).
+„Rekruuting“ (Recruiting), „Onbording“ (Onboarding), „Baafa“ (BAFA).
+Social Ads und Social Media werden auf Deutsch umschrieben („Werbung in sozialen Netzwerken“, „Auftritt in den sozialen Medien“).
 In den Untertiteln erscheint automatisch die richtige Schreibweise (Tabelle `DISPLAY` in `index.html`).

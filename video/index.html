@@ -438,7 +438,7 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-l
       <div class="rule"></div>
       <div class="blist">
         <div class="bl" data-in="@Arbeitgebermarke-0.1" data-a="left"><span class="ck"><i data-icon="check"></i></span>Arbeitgebermarke</div>
-        <div class="bl" data-in="@Social-0.1" data-a="left"><span class="ck"><i data-icon="check"></i></span>Social-Media-Auftritt</div>
+        <div class="bl" data-in="@Auftritt-0.1" data-a="left"><span class="ck"><i data-icon="check"></i></span>Social-Media-Auftritt</div>
         <div class="bl" data-in="@Benefits-0.1" data-a="left"><span class="ck"><i data-icon="check"></i></span>Corporate-Benefit-Pakete</div>
         <div class="bl" data-in="@Kultur-0.1" data-a="left"><span class="ck"><i data-icon="check"></i></span>Corporate Culture</div>
         <div class="bl" data-in="@Kultur+0.35" data-a="left"><span class="ck"><i data-icon="check"></i></span>Gehalts- &amp; Schulungsstrukturen</div>
@@ -484,7 +484,7 @@ svg.i{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-l
       <div class="h1" data-in="0.2" data-a="up">Staatlich gefördert.</div>
       <div class="h1 reg" data-in="@Sie-0.2" data-a="up">Sie zahlen nur den Eigenanteil.</div>
     </div>
-    <div class="badge" data-in="@Bafa-0.1" data-a="pop"><span class="ico"><i data-icon="shield"></i></span>BAFA-gelistete Beratung</div>
+    <div class="badge" data-in="@Baafa-0.1" data-a="pop"><span class="ico"><i data-icon="shield"></i></span>BAFA-gelistete Beratung</div>
     <div class="pricechip" data-in="@Bundesland-0.2" data-a="pop"><b>ab 700 €</b><small>Eigenanteil pro Paket</small></div>
     <div class="card fund" data-in="0.5" data-a="up">
       <div class="top"><b>Ein Paket</b><span>Beratungswert 3.500 €</span></div>
@@ -559,7 +559,7 @@ document.querySelectorAll('i[data-icon]').forEach(el=>{
 const scenes = {}; TL.scenes.forEach(s=>scenes[s.id]=s);
 const norm = w => w.toLowerCase().replace(/[^a-zäöüß0-9-]/g,'');
 // spoken spelling -> written word (captions and cues)
-const DISPLAY = {'dreihundertsechzig':'360°','grad':'','hundert':'100','fünfzig':'50','achtzig':'80','prozent':'%','bafa':'BAFA','sooschel':'Social','äds':'Ads','rikruuting':'Recruiting','onbording':'Onboarding'};
+const DISPLAY = {'dreihundertsechzig':'360°','grad':'','hundert':'100','fünfzig':'50','achtzig':'80','prozent':'%','bafa':'BAFA','sooschel':'Social','äds':'Ads','rikruuting':'Recruiting','rekruuting':'Recruiting','baafa':'BAFA','onbording':'Onboarding'};
 const wnorm = w => norm(DISPLAY[norm(w)] || w);
 function cue(spec, S){
   spec = String(spec).trim();
