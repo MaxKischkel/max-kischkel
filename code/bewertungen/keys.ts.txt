@@ -1,0 +1,3 @@
+  // So viele Bewertungen sind zuerst sichtbar (je nach Bildschirmbreite). Der Rest erscheint über den Button.
+  anzeige: { mobil: 4, tablet: 6, desktop: 9 },
+  mehr: { button: 'Weitere Bewertungen anzeigen', zaehler: '{n} von {gesamt} Bewertungen' },
