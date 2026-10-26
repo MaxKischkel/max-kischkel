@@ -558,6 +558,9 @@ document.querySelectorAll('i[data-icon]').forEach(el=>{
 
 const scenes = {}; TL.scenes.forEach(s=>scenes[s.id]=s);
 const norm = w => w.toLowerCase().replace(/[^a-zäöüß0-9-]/g,'');
+// spoken spelling -> written word (captions and cues)
+const DISPLAY = {'dreihundertsechzig':'360°','grad':'','hundert':'100','fünfzig':'50','achtzig':'80','prozent':'%','bafa':'BAFA','sooschel':'Social','äds':'Ads','rikruuting':'Recruiting','onbording':'Onboarding'};
+const wnorm = w => norm(DISPLAY[norm(w)] || w);
 function cue(spec, S){
   spec = String(spec).trim();
   const m = spec.match(/^(.*?)([+-]\d*\.?\d+)?$/);
@@ -566,7 +569,7 @@ function cue(spec, S){
   else if (head === 'end') rel = S.dur;
   else if (head.startsWith('@')) {
     let [w, n] = head.slice(1).split('#'); n = n ? parseInt(n) : 1;
-    const hits = S.words.filter(x => norm(x.w) === norm(w));
+    const hits = S.words.filter(x => norm(x.w) === norm(w) || wnorm(x.w) === norm(w));
     if (!hits[n-1]) { console.error('cue not found', spec, S.id); rel = 0; }
     else rel = hits[n-1].t;
   } else rel = parseFloat(head);
@@ -683,7 +686,6 @@ function stepVal(o,t){
 const CIRC = 2*Math.PI*86;
 
 // captions
-const DISPLAY = {'dreihundertsechzig':'360°','grad':'','hundert':'100','fünfzig':'50','achtzig':'80','prozent':'%','bafa':'BAFA','zwei':'zwei'};
 const chunks = [];
 TL.scenes.forEach(S=>{
   let cur = [];
