@@ -1,0 +1,23 @@
+/* ===== Team-Seite ===== */
+.tm-grid { --gap: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 28px var(--gap); margin: 64px 0 0; padding: 0; list-style: none; }
+@media (min-width: 768px) { .tm-grid { --gap: 24px; margin-top: 80px; } }
+.tm-card { flex: 0 1 calc((100% - var(--gap)) / 2); min-width: 0; display: flex; flex-direction: column; background: #fff; border: 1px solid #DEDCD2; border-radius: 20px; padding: 8px; box-shadow: 0 8px 24px rgba(33, 26, 26, .08); transition: transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s; }
+@media (min-width: 640px) { .tm-card { flex-basis: calc((100% - 2 * var(--gap)) / 3); } }
+@media (min-width: 1024px) { .tm-card { flex-basis: calc((100% - 4 * var(--gap)) / 5); } }
+@media (hover: hover) { .tm-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(33, 26, 26, .12); } }
+
+.tm-photo { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px; background: #EBE9E3; }
+.tm-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.tm-ph { display: grid; place-items: center; width: 100%; height: 100%; background: #F5F4F1; }
+.tm-initials { display: grid; place-items: center; width: 52%; aspect-ratio: 1; border-radius: 9999px; background: #FFE8DF; border: 1px solid #FFD3C2; color: #211A1A; font-family: 'PT Serif', Georgia, serif; font-weight: 700; font-size: clamp(28px, 3.2vw, 40px); letter-spacing: .02em; }
+.tm-badge { position: absolute; top: 10px; left: 10px; padding: 5px 10px; border-radius: 9999px; background: #FF6F3A; color: #211A1A; font-size: 12px; font-weight: 700; line-height: 1.2; letter-spacing: .12em; text-transform: uppercase; box-shadow: 0 4px 12px rgba(33, 26, 26, .18); }
+
+.tm-body { padding: 14px 10px 10px; }
+.tm-name { margin: 0; font-family: 'PT Serif', Georgia, serif; font-size: 19px; font-weight: 700; line-height: 1.2; color: #211A1A; overflow-wrap: anywhere; }
+@media (min-width: 768px) { .tm-name { font-size: 21px; } }
+.tm-role { margin: 4px 0 0; font-size: 15px; line-height: 1.35; color: #56504E; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tm-card { transition: none; }
+  .tm-card:hover { transform: none; }
+}
