@@ -1,0 +1,95 @@
+/* ===== Seite nach der Terminbuchung ===== */
+.tb2-hero { padding: clamp(120px, 14vw, 160px) 0 clamp(56px, 7vw, 88px); background: radial-gradient(ellipse at 50% 0%, #FFE9DF 0%, rgba(255, 233, 223, 0) 60%), #FAF8F4; }
+.tb2-kopf, .tb2-zentriert { max-width: 760px; margin-inline: auto; text-align: center; }
+.tb2-badge { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 20px; padding: 8px 16px; border-radius: 9999px; background: #fff; border: 1px solid #F3C9B6; color: #A84B2A; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.tb2-badge svg { color: #FF6F3A; }
+.tb2-h1 { margin: 0; text-wrap: balance; }
+.tb2-lead { margin: 16px auto 0; max-width: 620px; font-size: clamp(17px, 1.6vw, 19px); line-height: 1.6; color: #56504E; }
+.tb2-video-haupt { max-width: 900px; margin: clamp(32px, 4vw, 48px) auto 0; }
+.tb2-vertrauen { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; margin: 28px 0 0; padding: 0; list-style: none; font-weight: 700; color: #211A1A; }
+.tb2-vertrauen li { display: inline-flex; align-items: center; gap: 8px; }
+.tb2-vertrauen svg { color: #FF6F3A; flex: none; }
+
+/* Videos */
+.lv { position: relative; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; border-radius: 20px; background: #211A1A; box-shadow: 0 14px 40px rgba(33, 26, 26, .14); }
+.lv-gross { border-radius: 24px; }
+.lv-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #211A1A; object-fit: contain; }
+.lv-frame:focus { outline: none; }
+.lv-leer { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: #fff; border: 1.5px dashed #A84B2A; box-shadow: none; color: #A84B2A; }
+.lv-leer-icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 9999px; background: #F5F4F1; }
+.lv-gross .lv-leer-icon { width: 72px; height: 72px; }
+.lv-leer-text { font-weight: 700; font-size: 16px; }
+.lv-cover { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 16px; background: radial-gradient(ellipse at 30% 20%, #4A3A36 0%, #211A1A 70%); }
+.lv-start { display: inline-flex; align-items: center; gap: 14px; padding: 0; border: 0; background: none; color: #fff; cursor: pointer; text-align: left; }
+.lv-play { display: grid; place-items: center; width: 56px; height: 56px; padding-left: 3px; border-radius: 9999px; background: #FF6F3A; color: #211A1A; box-shadow: 0 0 22px rgba(255, 111, 58, .65); animation: lv-leuchten 2.4s ease-out infinite; transition: transform .25s; }
+.lv-gross .lv-play { width: 72px; height: 72px; }
+.lv-start:hover .lv-play, .lv-start:focus-visible .lv-play { transform: scale(1.07); }
+.lv-start-text { display: flex; flex-direction: column; line-height: 1.3; }
+.lv-start-text strong { font-size: 17px; }
+.lv-start-text small { font-size: 14px; color: #D4D1CB; }
+.lv-bild { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.lv-mit-bild { display: block; padding: 0; background: #211A1A; }
+.lv-mit-bild::after { content: ''; position: absolute; inset: 0; background: linear-gradient(45deg, rgba(33, 26, 26, .55) 0%, rgba(33, 26, 26, 0) 40%); pointer-events: none; }
+.lv-mit-bild .lv-start { position: absolute; inset: 0; z-index: 1; align-items: flex-end; justify-content: flex-start; padding: clamp(14px, 3.5%, 28px); }
+.lv-mit-bild .lv-start-text { text-shadow: 0 1px 8px rgba(0, 0, 0, .6); }
+.lv-mit-bild .lv-start:hover .lv-play, .lv-mit-bild .lv-start:focus-visible .lv-play { transform: scale(1.08); }
+.lv-mit-bild .lv-start:focus-visible { outline: 3px solid #FF6F3A; outline-offset: -6px; border-radius: inherit; }
+@media (max-width: 479px) { .lv-mit-bild .lv-start-text strong, .lv-mit-bild .lv-start-text small { display: none; } .lv-mit-bild .lv-play { width: 48px; height: 48px; } }
+@keyframes lv-leuchten {
+  0% { box-shadow: 0 0 22px rgba(255, 111, 58, .65), 0 0 0 0 rgba(255, 111, 58, .5); }
+  70% { box-shadow: 0 0 30px rgba(255, 111, 58, .8), 0 0 0 16px rgba(255, 111, 58, 0); }
+  100% { box-shadow: 0 0 22px rgba(255, 111, 58, .65), 0 0 0 0 rgba(255, 111, 58, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .lv-play { animation: none; transition: none; } }
+
+.tb2-reihen { display: grid; gap: clamp(48px, 7vw, 88px); margin: 56px 0 0; padding: 0; list-style: none; }
+.tb2-reihe { display: grid; gap: 24px; align-items: center; }
+@media (min-width: 900px) {
+  .tb2-reihe { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 56px; }
+  .tb2-reihe-umgekehrt { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
+  .tb2-reihe-umgekehrt .tb2-reihe-video { order: 2; }
+}
+.tb2-nummer { margin: 0 0 8px; font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #A84B2A; }
+.tb2-videotitel { margin: 0; font-family: 'PT Serif', Georgia, serif; font-size: clamp(24px, 2.4vw, 30px); font-weight: 700; line-height: 1.25; color: #211A1A; }
+.tb2-reihe-text .tb2-liste { margin-top: 20px; }
+
+/* Förderung */
+.tb2-foerderung { background: #211A1A; color: #D4D1CB; }
+.tb2-foerderung .h2 { color: #fff; }
+.tb2-foerderung .tb2-lead { color: #D4D1CB; }
+.tb2-foerder-punkte { display: grid; gap: 14px; max-width: 900px; margin: 36px auto 0; padding: 0; list-style: none; }
+@media (min-width: 768px) { .tb2-foerder-punkte { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; } }
+.tb2-foerder-punkte li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; line-height: 1.55; color: #fff; }
+.tb2-foerder-punkte svg { margin-top: 3px; color: #FF6F3A; }
+.tb2-foerderung .lv { box-shadow: 0 18px 50px rgba(0, 0, 0, .45); }
+
+/* Erwartung und Vorbereitung */
+.tb2-zwei { display: grid; gap: 24px; }
+@media (min-width: 900px) { .tb2-zwei { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tb2-karte { height: 100%; padding: clamp(28px, 4vw, 44px); border-radius: 24px; background: #fff; border: 1px solid #DEDCD2; box-shadow: 0 8px 24px rgba(33, 26, 26, .08); }
+.tb2-karte-dunkel { background: #211A1A; border-color: #211A1A; color: #D4D1CB; }
+.tb2-karte-dunkel .kicker { color: #FF6F3A; }
+.tb2-karte-dunkel .tb2-h3 { color: #fff; }
+.tb2-icon { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 20px; border-radius: 9999px; background: #F5F4F1; color: #A84B2A; }
+.tb2-karte-dunkel .tb2-icon { background: #3A3433; color: #FF6F3A; }
+.tb2-h3 { margin: 6px 0 0; font-family: 'PT Serif', Georgia, serif; font-size: clamp(24px, 2.4vw, 30px); font-weight: 700; line-height: 1.25; color: #211A1A; }
+.tb2-text { margin: 14px 0 0; font-size: 17px; line-height: 1.6; }
+.tb2-liste { display: grid; gap: 14px; margin: 22px 0 0; padding: 0; list-style: none; }
+.tb2-liste li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; line-height: 1.55; }
+.tb2-liste svg { margin-top: 3px; color: #FF6F3A; }
+.tb2-nummern { display: grid; gap: 14px; margin: 20px 0 0; padding: 0; list-style: none; counter-reset: tb2; }
+.tb2-nummern li { counter-increment: tb2; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; line-height: 1.55; color: #fff; }
+.tb2-nummern li::before { content: counter(tb2); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9999px; background: #FF6F3A; color: #211A1A; font-weight: 700; font-size: 15px; }
+.tb2-hinweis { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid #56504E; font-size: 16px; color: #D4D1CB; }
+
+/* Stimmen */
+.tb2-stimmen { display: grid; gap: 24px; margin-top: 48px; align-items: start; }
+@media (min-width: 900px) { .tb2-stimmen { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.tb2-mehr { margin-top: 40px; }
+
+/* Abschluss */
+.tb2-abschluss { max-width: 720px; margin-inline: auto; text-align: center; }
+.tb2-kontakt { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; margin: 20px 0 0; }
+.tb2-kontakt a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 700; color: #A84B2A; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.tb2-kontakt a:hover { color: #211A1A; }
+.tb2-zentriert .kicker { justify-content: center; }
